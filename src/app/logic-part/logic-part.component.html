@@ -1,0 +1,144 @@
+<div class="center">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class='input-field'>
+            <label for='select'>Coin H?T</label>
+            <select formControlName="ht" class="form-control">
+                <option disabled selected>select</option>
+                <option>Head</option>
+                <option>Tail</option>
+
+            </select>
+            <div *ngIf="f.ht.touched && f.ht.invalid" class="alert alert-danger">
+                H/T is required.
+            </div>
+        </div>
+        <button type="submit" class="middle" [disabled]="!form.valid">Submit</button>
+    </form>
+    <br>
+</div>
+<!-- <table style="width:100%"  >
+            <tr *ngFor="let item of coinData let last=last">
+              <td *ngIf="item.ht == Head"> {{ item.ht }}</td>
+            </tr>
+            <tr *ngFor="let item of coinData let last=last">
+                <td *ngIf="item.ht"> {{ item.ht }}</td>
+              </tr>
+          </table> -->
+<!-- <div class="row" *ngFor="let item of coinData let last=last">
+        <article *ngIf="item.ht=='Head'" [ngClass]="{d: item.ht=='Head'}">{{item.ht}}</article>
+        <article  [ngClass]="{colomn: item.ht=='Tail'}">{{item.ht}}</article> 
+    </div> -->
+<!-- <div class="container" *ngFor="let item1 of coinData">
+        <article class="col-3" *ngIf="item1.ht=='Tail'" [ngClass]="{d: item1.ht=='Tail'}">{{item1.ht}}</article>
+    </div> -->
+<div class="row">
+    <div class="1 col-1">
+        <div *ngFor="let item1 of coinData">
+            <div *ngIf="item1.count==1">
+                {{item1.ht}}
+
+            </div>
+        </div>
+    </div>
+    <div class="2 col-1">
+        <div *ngFor="let item2 of coinData">
+            <div *ngIf="item2.count==2">
+                {{item2.ht}}
+
+            </div>
+        </div>
+    </div>
+    <div class="3 col-1">
+        <div *ngFor="let item3 of coinData">
+            <div *ngIf="item3.count==3">
+                {{item3.ht}}
+            </div>
+        </div>
+    </div>
+
+    <div class="4 col-1">
+        <div *ngFor="let item4 of coinData">
+            <div *ngIf="item4.count==4">
+                {{item4.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="5 col-1">
+        <div *ngFor="let item5 of coinData">
+            <div *ngIf="item5.count==5">
+                {{item5.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="6 col-1">
+        <div *ngFor="let item6 of coinData">
+            <div *ngIf="item6.count==6">
+                {{item6.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="7 col-1">
+        <div *ngFor="let item7 of coinData">
+            <div *ngIf="item7.count==7">
+                {{item7.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="8 col-1">
+        <div *ngFor="let item8 of coinData">
+            <div *ngIf="item8.count==8">
+                {{item8.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="9 col-1">
+        <div *ngFor="let item9 of coinData">
+            <div *ngIf="item9.count==9">
+                {{item9.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="10 col-1">
+        <div *ngFor="let item10 of coinData">
+            <div *ngIf="item10.count==10">
+                {{item10.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="11 col-1">
+        <div *ngFor="let item11 of coinData">
+            <div *ngIf="item11.count==11">
+                {{item11.ht}}
+            </div>
+        </div>
+    </div>
+    <div class="12 col-1">
+        <div *ngFor="let item12 of coinData">
+            <div *ngIf="item12.count==12">
+                {{item12.ht}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="1 col-1" >
+        <div *ngFor="let item1 of coinData">
+            <div *ngIf="item1.count==1">
+                {{item1.ht}}
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="row">
+        <div *ngFor="let item of coinData">
+            <div class="column" *ngIf="item.ht=='Head'" style="background-color:#aaa;">
+                <h2>{{item.ht}}</h2>
+            </div>
+        </div>
+        <div *ngFor="let item of coinData">
+            <div class="column" *ngIf="item.ht=='Tail'" style="background-color:#bbb;">
+                <h2>{{item.ht}}</h2>
+            </div>
+        </div>
+    </div> -->
