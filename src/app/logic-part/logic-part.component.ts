@@ -13,8 +13,9 @@ export interface coin {
 })
 export class LogicPartComponent implements OnInit {
 
-  coinData: coin[] = [{ht: "Head", count: 1}];
+  coinData: coin[] = [];
   count:any=1;
+  loopCounter:number[]=[]
 
   // data:any=[
   //           ["a","a","a"],
@@ -35,56 +36,21 @@ export class LogicPartComponent implements OnInit {
   public element!: string;
   submit() {
     if (this.form.valid) {
-      const h="Head";
-      const t="Tail";
-      // const formData= new FormData;
-      // formData.append("ht",this.form.controls.ht.value)
-      // formData.append("count",count)
-      // console.log("inside", formData);
-      // if(this.coinData.lastIndexOf(this.coinData[this.coinData.length-1])){
-        
-      // }
-      // if(this.coinData && this.coinData[this.coinData.length-1].ht == h){
-      //   this.coinData.push(this.form.value)
-      // }
-      // if(this.coinData && this.coinData[(this.coinData.length-1)].ht == "Tail"){
-      //   this.coinData.push(this.form.value)
-      // }
-      // if(this.coinData && this.coinData[(this.coinData.length-1)]){
-        
-      // }
-      
-      
-      // console.log(this.coinData[this.coinData.length-1].ht,this.form.controls.ht.value);
-      
-      if(this.coinData[this.coinData.length-1].ht === this.form.controls.ht.value){
-        
+      if( this.coinData[this.coinData.length-1]?.ht === this.form.controls.ht.value){
         let x = this.form.value;
         x['count']= this.count;
-        // console.log(this.coinData)
         this.coinData.push(x);
         console.log(this.coinData);
       }else{
         this.count++;
         let x = this.form.value;
         x['count']= this.count;
-        // console.log(this.coinData)
         this.coinData.push(x);
         console.log(this.coinData);
-        // count--;
       }
     
-
-      // this.coinData.push();
-
-      // console.log(this.coinData[this.coinData.length-1]);
-      // console.log("save in coin array", this.coinData);
-      ///
-      // let row = "<tr>"
-      // row = row + "<td>" + this.form.value + "</td>";
-      // row = row + "</tr>"
-      ////
-
+      let k:number[] = this.coinData.map(e=>e.count);
+       this.loopCounter = k.filter((e,i)=>k.indexOf(e) === i);
     }
   }
 

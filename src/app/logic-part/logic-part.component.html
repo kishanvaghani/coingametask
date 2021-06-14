@@ -17,22 +17,8 @@
     </form>
     <br>
 </div>
-<!-- <table style="width:100%"  >
-            <tr *ngFor="let item of coinData let last=last">
-              <td *ngIf="item.ht == Head"> {{ item.ht }}</td>
-            </tr>
-            <tr *ngFor="let item of coinData let last=last">
-                <td *ngIf="item.ht"> {{ item.ht }}</td>
-              </tr>
-          </table> -->
-<!-- <div class="row" *ngFor="let item of coinData let last=last">
-        <article *ngIf="item.ht=='Head'" [ngClass]="{d: item.ht=='Head'}">{{item.ht}}</article>
-        <article  [ngClass]="{colomn: item.ht=='Tail'}">{{item.ht}}</article> 
-    </div> -->
-<!-- <div class="container" *ngFor="let item1 of coinData">
-        <article class="col-3" *ngIf="item1.ht=='Tail'" [ngClass]="{d: item1.ht=='Tail'}">{{item1.ht}}</article>
-    </div> -->
-<div class="row">
+
+<!-- <div class="row">
     <div class="1 col-1">
         <div *ngFor="let item1 of coinData">
             <div *ngIf="item1.count==1">
@@ -120,25 +106,13 @@
             </div>
         </div>
     </div>
-</div>
-<!-- <div class="row">
-    <div class="1 col-1" >
-        <div *ngFor="let item1 of coinData">
-            <div *ngIf="item1.count==1">
-                {{item1.ht}}
+</div> -->
+<div class="row">
+    <div  *ngFor="let count of loopCounter" class="1 col-1">
+        <div *ngFor="let item of coinData">
+            <div *ngIf="item.count== count">
+                {{item.ht}}
             </div>
         </div>
     </div>
-</div> -->
-<!-- <div class="row">
-        <div *ngFor="let item of coinData">
-            <div class="column" *ngIf="item.ht=='Head'" style="background-color:#aaa;">
-                <h2>{{item.ht}}</h2>
-            </div>
-        </div>
-        <div *ngFor="let item of coinData">
-            <div class="column" *ngIf="item.ht=='Tail'" style="background-color:#bbb;">
-                <h2>{{item.ht}}</h2>
-            </div>
-        </div>
-    </div> -->
+</div>
