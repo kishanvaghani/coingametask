@@ -1,27 +1,70 @@
-<div class="global-container">
+<!-- <div class="global-container">
 	<div class="card login-form">
-	<div class="card-body">
-		<h3 class="card-title text-center">Log in to Codepen</h3>
-		<div class="card-text">
-			<!--
-			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
-			<form [formGroup]="loginForm" (ngSubmit)="login()" >
-				<!-- to error: add class "has-danger" -->
-				<div class="form-group">
-					<label for="exampleInputEmail1" >Email address</label>
-					<input type="email" class="form-control form-control-sm" formControlName="email"  aria-describedby="emailHelp">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputPassword1" >Password</label>
-					<input type="password" formControlName="pass" class="form-control form-control-sm" >
-				</div>
-				<button type="submit" class="btn btn-primary btn-block">Sign in</button>
-				
-				<div class="sign-up">
-					Don't have an account? <a href="#">Create One</a>
-				</div>
-			</form>
+		<div class="card-body">
+			<h3 class="card-title text-center">Log in to Codepen</h3>
+			<div class="card-text">
+				<form [formGroup]="loginForm" (ngSubmit)="login()">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control form-control-sm" formControlName="email"
+							aria-describedby="emailHelp">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" formControlName="pass" class="form-control form-control-sm">
+					</div>
+					<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+
+					<div class="sign-up">
+						Don't have an account? <a href="#">Create One</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
+</div> -->
+
+<!-- New Login -->
+<div class="wrapper">
+  <div class="form">
+    <div class="title">Login To Coding Market</div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="input_wrap">
+        <label for="input_text">Email or Username</label>
+        <div class="input_field">
+          <input type="text" class="input" formControlName="email" />
+        </div>
+      </div>
+      <div class="input_wrap">
+        <label for="input_password">Password</label>
+        <div class="input_field">
+          <input type="password" class="input" formControlName="pass" />
+        </div>
+      </div>
+      <div class="input_wrap">
+        <span
+         
+          [ngClass]="{
+            error_msg:
+              loginForm.get('email')?.invalid ||  loginForm.get('pass')?.invalid
+          }"
+          >Incorrect username or password. Please try again</span
+        >
+        <span
+          [ngClass]="{
+            error_msg:
+              error
+          }"
+          >Incorrect username or password. Please try again</span
+        >
+        <button
+          type="submit"
+          id="login_btn"
+          class="btn enabled"
+          [ngClass]="{disabled: false}"
+          
+        > SUBMIT</button>
+      </div>
+    </form>
+  </div>
 </div>
